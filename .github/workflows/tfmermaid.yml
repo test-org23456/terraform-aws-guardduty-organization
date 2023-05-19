@@ -23,6 +23,15 @@ jobs:
           chmod 600 "$SSH_PATH/id_rsa"
           eval $(ssh-agent)
           ssh-add "$SSH_PATH/id_rsa"
+          cat << EOF > ~/.ssh/config
+          Host gihub.com
+            Hostname github.com
+            IdentityFile ~/.ssh/id_rsa.pub
+            PreferredAuthentications publickey
+          EOF
+          chmod 644 ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/config
+
           git clone git@github.com:test-org23456/terraform-aws-guardduty-organization.git
     
       - uses: asannou/tfmermaid-action@master
