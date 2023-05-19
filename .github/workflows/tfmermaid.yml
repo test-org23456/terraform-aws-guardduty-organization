@@ -33,6 +33,7 @@ jobs:
           if ! git diff --cached --quiet --exit-code
           then
             git config user.name "rafat-parveen"
+            git show
             git commit -m "generated"
             git show
             git log
