@@ -23,6 +23,7 @@ jobs:
           chmod 600 "$SSH_PATH/id_rsa"
           eval $(ssh-agent)
           ssh-add "$SSH_PATH/id_rsa"
+          git clone git@github.com:test-org23456/terraform-aws-guardduty-organization.git
     
       - uses: asannou/tfmermaid-action@master
         with:
@@ -48,9 +49,6 @@ jobs:
           if ! git diff --cached --quiet --exit-code
           then
             git config user.name "rafat-parveen"
-            git show
             git commit -m "generated"
-            git show
-            git log
             git push -f
           fi
