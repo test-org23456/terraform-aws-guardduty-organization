@@ -31,8 +31,6 @@ jobs:
           EOF
           chmod 644 ~/.ssh/known_hosts
           chmod 644 ~/.ssh/config
-
-          git clone git@github.com:test-org23456/terraform-aws-guardduty-organization.git
     
       - uses: asannou/tfmermaid-action@master
         with:
