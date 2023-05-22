@@ -1,4 +1,4 @@
-name: tfmermaidtest
+name: tfmermaidtest1
 on:
   push:
   workflow_dispatch:
