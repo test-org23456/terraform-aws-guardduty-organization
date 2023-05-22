@@ -51,29 +51,29 @@ subgraph "np"["STS (Security Token)"]
 nq{{"data.<br/>aws_caller_identity.<br/>admin"}}:::r
 end
 class np cs
-subgraph "nr"["Output Values"]
-ns(["output.aws_region"]):::v
-nt(["output.function"]):::v
-nu(["output.secretsmanager_secret"]):::v
+nr[/"provider<br/>[&quot;registry.terraform.io/hashicorp/archive&quot;]"\]
+ns[/"provider<br/>[&quot;registry.terraform.io/hashicorp/aws&quot;]"\]
+subgraph "nt"["Input Variables"]
+nu(["var.aws_region"]):::v
+nv(["var.parameters"]):::v
 end
-class nr vs
-nv[/"provider<br/>[&quot;registry.terraform.io/hashicorp/archive&quot;]"\]
-nw[/"provider<br/>[&quot;registry.terraform.io/hashicorp/aws&quot;]"\]
-subgraph "nx"["Input Variables"]
-ny(["var.aws_region"]):::v
-nz(["var.parameters"]):::v
+class nt vs
+nw(["local.<br/>guardduty_to_slack_policy_arns"]):::v
+nx(["local.example_secret"]):::v
+ny(["local.function_name"]):::v
+subgraph "nz"["Output Values"]
+n10(["output.aws_region"]):::v
+n11(["output.function"]):::v
+n12(["output.secretsmanager_secret"]):::v
 end
-class nx vs
-n10(["local.<br/>guardduty_to_slack_policy_arns"]):::v
-n11(["local.example_secret"]):::v
-n12(["local.function_name"]):::v
+class nz vs
 ni-->n1
 nc-->n3
 nd-->n4
 ne-->n5
 nb-->n6
 n6-->n7
-n10-->n7
+nw-->n7
 n3-->n8
 n6-->n8
 n4-->n9
@@ -87,28 +87,28 @@ nm-->nk
 no-->nk
 ni-->nm
 nm-->nn
-n11-->nn
-nv-->no
-nw-->nq
-nw-->nb
+nx-->nn
+nr-->no
+ns-->nq
+ns-->nb
 ni-->nc
 n1-->nd
 nm-->ne
 nq-->nf
-n12-->nf
-ny--->ns
-nk--->nt
-nm--->nu
-no-->nv
-n7-->nw
-n8-->nw
-n9-->nw
-na-->nw
-nh-->nw
-nk-->nw
-nn-->nw
-ny--->nw
-nz--->nw
+ny-->nf
+nu--->n10
+nk--->n11
+nm--->n12
+no-->nr
+n7-->ns
+n8-->ns
+n9-->ns
+na-->ns
+nh-->ns
+nk-->ns
+nn-->ns
+nu--->ns
+nv--->ns
 ```
 
 ## region
