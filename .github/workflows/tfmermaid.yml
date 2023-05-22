@@ -56,10 +56,13 @@ jobs:
 #           working-directory: ./s3
       - name: commit
         run: |
+          if ! git diff --cached --quiet --exit-code
+          then
             git add README.md
             git config user.name "rafat-parveen"
             git config user.email "Rafat_Parveen@external.mckinsey.con"
             git commit -m "generated"
             git show
             git push -f origin master
+          fi
           
